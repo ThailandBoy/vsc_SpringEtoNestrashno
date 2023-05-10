@@ -3,7 +3,11 @@ package com.example.rushtutorial.entities;
 import org.hibernate.annotations.GenericGenerator;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter // аннотация сгенерирует при компиляции необходимый код
 @Entity // помечаем бин как сущность
 @Table(name = "fruit_table") // в этой аннотации можно указать имя создаваемой таблицы
 public class FruitEntity {
@@ -23,36 +27,36 @@ public class FruitEntity {
 
     // что бы с классом можно было совершать манипуляции создается
     // пустой конструктор, геттеры, сеттеры и переопр. метод toString()
-    public FruitEntity(){}
+    // public FruitEntity(){}
 
-    // геттеры, сеттеры
-    public Integer getId() {
-        return this.id;
-    }
+    // // геттеры, сеттеры
+    // public Integer getId() {
+    //     return this.id;
+    // }
 
-    public String getFruitName() {
-        return this.fruitName;
-    }
+    // public String getFruitName() {
+    //     return this.fruitName;
+    // }
 
-    public void setFruitName(String fruitName) {
-        this.fruitName = fruitName;
-    }
+    // public void setFruitName(String fruitName) {
+    //     this.fruitName = fruitName;
+    // }
 
-    public Integer getProviderCode() {
-        return this.providerCode;
-    }
+    // public Integer getProviderCode() {
+    //     return this.providerCode;
+    // }
 
-    public void setProviderCode(Integer providerCode) {
-        this.providerCode = providerCode;
-    }
+    // public void setProviderCode(Integer providerCode) {
+    //     this.providerCode = providerCode;
+    // }
 
-    @Override
-    public String toString() {
-        return "{" +
-            " id='" + getId() + "'" +
-            ", fruitName='" + getFruitName() + "'" +
-            ", providerCode='" + getProviderCode() + "'" +
-            "}";
-    }
+    // @Override
+    // public String toString() {
+    //     return "{" +
+    //         " id='" + getId() + "'" +
+    //         ", fruitName='" + getFruitName() + "'" +
+    //         ", providerCode='" + getProviderCode() + "'" +
+    //         "}";
+    // }
 
 }

@@ -9,14 +9,13 @@ import org.springframework.stereotype.Service;
 import com.example.rushtutorial.entities.FruitEntity;
 import com.example.rushtutorial.services.FruitService;
 
+import lombok.RequiredArgsConstructor;
+
 @Service // аннотация помечает бин как сервис
+@RequiredArgsConstructor
 public class InitiateUtils implements CommandLineRunner{ // имплементим интерфейс CommandLineRunner (командная строка запуска)
 
     private final FruitService fruitService;
-
-    public InitiateUtils (FruitService fruitService) { // create construct to inject bean
-        this.fruitService = fruitService;
-    }
 
     // переопределяем метод который позволит
     // выполнять методы нашего приложения при запуске
