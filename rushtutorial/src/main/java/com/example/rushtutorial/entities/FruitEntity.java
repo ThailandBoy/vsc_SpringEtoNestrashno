@@ -50,13 +50,15 @@ public class FruitEntity {
     //     this.providerCode = providerCode;
     // }
 
-    // @Override
-    // public String toString() {
-    //     return "{" +
-    //         " id='" + getId() + "'" +
-    //         ", fruitName='" + getFruitName() + "'" +
-    //         ", providerCode='" + getProviderCode() + "'" +
-    //         "}";
-    // }
+
+    @Override
+    public String toString() {
+        return "{" +
+            " id='" + getId() + "'" +
+            ", fruitName='" + getFruitName() + "'" +
+            ", providerCode='" + getProviderCode() + "'" +
+            "}";
+    }
+
 
 }
