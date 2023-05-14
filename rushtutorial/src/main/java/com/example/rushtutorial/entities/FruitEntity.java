@@ -5,7 +5,11 @@ import org.hibernate.annotations.GenericGenerator;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.experimental.Accessors;
+import lombok.ToString;
 
+@Accessors(chain = true)
+@ToString
 @Getter
 @Setter // аннотация сгенерирует при компиляции необходимый код
 @Entity // помечаем бин как сущность
@@ -49,16 +53,6 @@ public class FruitEntity {
     // public void setProviderCode(Integer providerCode) {
     //     this.providerCode = providerCode;
     // }
-
-
-    @Override
-    public String toString() {
-        return "{" +
-            " id='" + getId() + "'" +
-            ", fruitName='" + getFruitName() + "'" +
-            ", providerCode='" + getProviderCode() + "'" +
-            "}";
-    }
 
 
 }
