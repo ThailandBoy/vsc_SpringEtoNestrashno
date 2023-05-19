@@ -1,12 +1,10 @@
 package com.example.rushtutorial.utils;
 
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Service;
 
 import com.example.rushtutorial.entities.FruitEntity;
@@ -14,23 +12,19 @@ import com.example.rushtutorial.entities.ProviderEntity;
 import com.example.rushtutorial.services.FruitService;
 import com.example.rushtutorial.services.ProviderService;
 
-@Service // аннотация помечает бин как сервис
-public class InitiateUtils implements CommandLineRunner{ // имплементим интерфейс CommandLineRunner (командная строка запуска)
 
-    
-    private final FruitService fruitService;
-    private final ProviderService providerService;
+@Service
+public class FruitProviderRun {
+    private static FruitService fruitService;
+    private static ProviderService providerService;
 
-    public InitiateUtils(FruitService fruitService, ProviderService providerService){
-        this.fruitService = fruitService;
-        this.providerService = providerService;
+    public FruitProviderRun (){
+        fruitService = new FruitService(null);
+        providerService = new ProviderService(null);
     }
-    
-    // переопределяем метод который позволит
-    // выполнять методы нашего приложения при запуске
-    @Override
-    public void run(String... args) throws Exception {
-        System.out.println("run"); // для проверки работы
+
+    public static void activate() {
+        System.out.println("Fruit - Provider activated"); // для проверки работы
 
         // код ниже благодаря @Accessors(chain = true) мы можем заполнить (проинициализировать) List следующий образом:
         List<FruitEntity> fruitEntityList = new ArrayList<>(    // тут создаем обычный ArrayList
@@ -160,8 +154,5 @@ public class InitiateUtils implements CommandLineRunner{ // имплементи
         // for (FruitEntity entity : all) {
         //     System.out.println(entity);
         // }
-
-
     }
-    
 }
