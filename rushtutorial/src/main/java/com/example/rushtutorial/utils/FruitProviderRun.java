@@ -24,6 +24,9 @@ public class FruitProviderRun {
     }
 
     public static void activate() {
+
+        System.out.println("ConsoleGUI begin");
+
         System.out.println("Fruit - Provider activated"); // для проверки работы
 
         // код ниже благодаря @Accessors(chain = true) мы можем заполнить (проинициализировать) List следующий образом:
