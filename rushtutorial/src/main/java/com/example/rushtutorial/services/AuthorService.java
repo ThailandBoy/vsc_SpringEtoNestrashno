@@ -37,10 +37,19 @@ public class AuthorService {
         return authorRepository.authorOfBookSQL();
     }
 
-    // // Who write a book? JPQP
+    // Who write a book? JPQP
     public List<String> authorOfBookJPQL() {
         return authorRepository.authorOfBookJPQL();
     }
+
     // Кто написал больше всего книг?
+    public List<String> bookCountByAuthorSQL() {
+        return authorRepository.bookCountByAuthorSQL();
+    }
+
+    // Кто написал больше всего книг?
+    public List<String> bookCountByAuthorJPQL() {
+        return authorRepository.bookCountByAuthorJPQL();
+    }
 
 }

@@ -34,11 +34,24 @@ public class BookService {
         return bookRepository.findAll();
     }
 
-    // Какая книга написана раньше всех?
-    public List<String> sortByAge() {
-        return bookRepository.sortByAge();
+    // Какая книга написана раньше всех? SQL
+    public List<String> sortByAgeSQL() {
+        return bookRepository.sortByAgeSQL();
+    }
+    
+    // Какая книга написана раньше всех? JPQL
+    public List<String> sortByAgeJPQL() {
+        return bookRepository.sortByAgeJPQL();
     }
 
-    // Какие книги были написаны с 1800 по 1900
-    
+    // Какие книги были написаны с 1800 по 1900 SQL
+    public List<BookEntity> between1819_SQL() {
+        return bookRepository.between1819_SQL();
+    }
+
+    // Какие книги были написаны с 1800 по 1900 JPQL
+    public List<BookEntity> between1819_JPQL() {
+        return bookRepository.between1819_JPQL();
+    }
+
 }

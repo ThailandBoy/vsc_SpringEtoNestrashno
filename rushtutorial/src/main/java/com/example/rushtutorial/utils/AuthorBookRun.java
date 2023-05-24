@@ -64,19 +64,44 @@ public class AuthorBookRun {
         bookService.saveAll(bookList);
 
 
-        System.out.println("Sort by creation age.");
-        for (String bookEntity : bookService.sortByAge()) {
-            System.out.println(bookEntity);
+        // System.out.println("Sort by creation age. SQL");
+        // for (String bookEntity : bookService.sortByAgeSQL()) {
+        //     System.out.println(bookEntity);
+        // }
+
+        // System.out.println("Sort by creation age. JPQL");
+        // for (String bookString : bookService.sortByAgeJPQL()) {
+        //     System.out.println(bookString);            
+        // }
+
+        // System.out.println("Авторы книг SQL:");
+        // for (String authorBook : authorService.authorOfBookSQL()) {
+        //     System.out.println(authorBook);
+        // }
+
+        // System.out.println("Авторы книг JPQL:");
+        // for (String authorBook : authorService.authorOfBookJPQL()) {
+        //     System.out.println(authorBook);
+        // }
+
+        // System.out.println("Creation year between 1800 - 1900 SQL");
+        // for (BookEntity bookEntity : bookService.between1819_SQL()) {
+        //     System.out.println(bookEntity);
+        // }
+
+        // System.out.println("Creation year between 1800 - 1900 JPQL");
+        // for (BookEntity bookEntity : bookService.between1819_JPQL()) {
+        //     System.out.println(bookEntity);
+        // }
+
+        System.out.println("Book count by Author: SQL");
+        for (String bookString : authorService.bookCountByAuthorSQL()) {
+            System.out.println(bookString);
         }
 
-        System.out.println("Авторы книг SQL:");
-        for (String authorBook : authorService.authorOfBookSQL()) {
-            System.out.println(authorBook);
-        }
-
-        System.out.println("Авторы книг JPQL:");
-        for (String authorBook : authorService.authorOfBookJPQL()) {
-            System.out.println(authorBook);
+        System.out.println("Book count by Author: JPQL");
+        for (String bookString : authorService.bookCountByAuthorJPQL()) {
+            System.out.println(bookString);
         }
 
     }

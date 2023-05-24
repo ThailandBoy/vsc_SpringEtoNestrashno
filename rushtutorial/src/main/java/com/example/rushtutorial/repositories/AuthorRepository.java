@@ -13,7 +13,16 @@ public interface AuthorRepository extends JpaRepository<AuthorEntity, Integer>{
     
     
 
-    // Кто написал больше всего книг?
+    // Кто написал больше всего книг? SQL
+    @Query(
+        value = "SELECT author_table.first_nameauthor, author_table.last_nameauthor, COUNT(book_table.name_book) FROM book_table JOIN author_table ON book_table.author_id = author_table.id GROUP BY author_table.id",
+        nativeQuery = true
+    )
+    List<String> bookCountByAuthorSQL();
+
+    // Кто написал больше всего книг? JPQL
+    @Query("SELECT a.firstNameAuthor, a.lastNameAuthor, COUNT(b.nameBook) FROM AuthorEntity a JOIN BookEntity b ON a.id = b.authorId GROUP BY a.id")
+    List<String> bookCountByAuthorJPQL();
     
     // Кто написал какую книгу? SQL
     @Query(
