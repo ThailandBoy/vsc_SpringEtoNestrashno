@@ -41,23 +41,23 @@ public class AuthorBookRun {
 
         List<BookEntity> bookList = new ArrayList<>(
             Arrays.asList(
-                new BookEntity().setNameBook("Горе от ума").setYearCreat(1824).setAuthorId(1),
-                new BookEntity().setNameBook("Война и мир").setYearCreat(1863).setAuthorId(2),
-                new BookEntity().setNameBook("Мцыри").setYearCreat(1838).setAuthorId(3),
-                new BookEntity().setNameBook("Евгений Онегин").setYearCreat(1833).setAuthorId(4),
-                new BookEntity().setNameBook("Гарри Поттер и философский камень").setYearCreat(1997).setAuthorId(5),
-                new BookEntity().setNameBook("Гарри Поттер и тайная комната").setYearCreat(1998).setAuthorId(5),
-                new BookEntity().setNameBook("Гарри Поттер и узник азкабана").setYearCreat(1999).setAuthorId(5),
-                new BookEntity().setNameBook("Гарри Поттер и кубок огня").setYearCreat(2000).setAuthorId(5),
-                new BookEntity().setNameBook("Гарри Поттер и орден феникса").setYearCreat(2003).setAuthorId(5),
-                new BookEntity().setNameBook("Гарри Поттер и Философский камень").setYearCreat(1997).setAuthorId(5),
-                new BookEntity().setNameBook("Гарри Поттер и дары смерти").setYearCreat(2007).setAuthorId(5),
-                new BookEntity().setNameBook("Анна Каренина").setYearCreat(1877).setAuthorId(2),
-                new BookEntity().setNameBook("Герой нашего времени").setYearCreat(1840).setAuthorId(3),
-                new BookEntity().setNameBook("Бородино").setYearCreat(1837).setAuthorId(3),
-                new BookEntity().setNameBook("Капитанская дочь").setYearCreat(1836).setAuthorId(4),
-                new BookEntity().setNameBook("Дубровский").setYearCreat(1841).setAuthorId(4),
-                new BookEntity().setNameBook("Сказка мертвой принцессы и семи рыцарей").setYearCreat(1833).setAuthorId(4)
+                new BookEntity().setNameBook("Горе от ума").setYearCreated(1824).setAuthorId(1),
+                new BookEntity().setNameBook("Война и мир").setYearCreated(1863).setAuthorId(2),
+                new BookEntity().setNameBook("Мцыри").setYearCreated(1838).setAuthorId(3),
+                new BookEntity().setNameBook("Евгений Онегин").setYearCreated(1833).setAuthorId(4),
+                new BookEntity().setNameBook("Гарри Поттер и философский камень").setYearCreated(1997).setAuthorId(5),
+                new BookEntity().setNameBook("Гарри Поттер и тайная комната").setYearCreated(1998).setAuthorId(5),
+                new BookEntity().setNameBook("Гарри Поттер и узник азкабана").setYearCreated(1999).setAuthorId(5),
+                new BookEntity().setNameBook("Гарри Поттер и кубок огня").setYearCreated(2000).setAuthorId(5),
+                new BookEntity().setNameBook("Гарри Поттер и орден феникса").setYearCreated(2003).setAuthorId(5),
+                new BookEntity().setNameBook("Гарри Поттер и Философский камень").setYearCreated(1997).setAuthorId(5),
+                new BookEntity().setNameBook("Гарри Поттер и дары смерти").setYearCreated(2007).setAuthorId(5),
+                new BookEntity().setNameBook("Анна Каренина").setYearCreated(1877).setAuthorId(2),
+                new BookEntity().setNameBook("Герой нашего времени").setYearCreated(1840).setAuthorId(3),
+                new BookEntity().setNameBook("Бородино").setYearCreated(1837).setAuthorId(3),
+                new BookEntity().setNameBook("Капитанская дочь").setYearCreated(1836).setAuthorId(4),
+                new BookEntity().setNameBook("Дубровский").setYearCreated(1841).setAuthorId(4),
+                new BookEntity().setNameBook("Сказка мертвой принцессы и семи рыцарей").setYearCreated(1833).setAuthorId(4)
             )
         );
 
@@ -65,7 +65,7 @@ public class AuthorBookRun {
 
 
         System.out.println("Sort by creation age.");
-        for (BookEntity bookEntity : bookService.sortByAge()) {
+        for (String bookEntity : bookService.sortByAge()) {
             System.out.println(bookEntity);
         }
 

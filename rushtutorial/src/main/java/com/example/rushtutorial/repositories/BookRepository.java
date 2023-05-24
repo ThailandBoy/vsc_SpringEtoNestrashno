@@ -11,12 +11,12 @@ import com.example.rushtutorial.entities.BookEntity;
 @Repository
 public interface BookRepository extends JpaRepository<BookEntity, Integer>{
 
-    // Какая книга написана раньше всех?
+    // Какая книга написана раньше всех? SQL
     @Query(
-        value = "SELECT * FROM book_table ORDER BY year_creat ASC",
+        value = "SELECT book_table.year_created, book_table.name_book FROM book_table ORDER BY book_table.year_created ASC",
         nativeQuery = true
     )
-    List<BookEntity> sortByAge();
+    List<String> sortByAge();
 
 
     // Какие книги были написаны с 1800 по 1900

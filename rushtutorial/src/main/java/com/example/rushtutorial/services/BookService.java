@@ -35,7 +35,7 @@ public class BookService {
     }
 
     // Какая книга написана раньше всех?
-    public List<BookEntity> sortByAge() {
+    public List<String> sortByAge() {
         return bookRepository.sortByAge();
     }
 

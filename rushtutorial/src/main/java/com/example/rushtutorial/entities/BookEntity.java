@@ -30,8 +30,8 @@ public class BookEntity {
     @Column(name = "name_book")
     private String nameBook;
 
-    @Column(name = "year_creat")
-    private Integer yearCreat;
+    @Column(name = "year_created")
+    private Integer yearCreated;
 
     @Column(name = "author_id")
     private Integer authorId;
