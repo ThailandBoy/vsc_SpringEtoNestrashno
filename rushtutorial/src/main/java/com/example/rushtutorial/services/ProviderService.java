@@ -7,7 +7,6 @@ import java.util.Optional;
 import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
-import com.example.rushtutorial.entities.FruitEntity;
 import com.example.rushtutorial.entities.ProviderEntity;
 import com.example.rushtutorial.repositories.ProviderRepository;
 

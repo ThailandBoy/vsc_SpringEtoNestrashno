@@ -18,16 +18,16 @@ public class FruitProviderRun {
     private static FruitService fruitService;
     private static ProviderService providerService;
 
-    public FruitProviderRun (){
-        fruitService = new FruitService(null);
-        providerService = new ProviderService(null);
+    public FruitProviderRun (FruitService fruitService, ProviderService providerService){
+        this.fruitService = fruitService;
+        this.providerService = providerService;
     }
 
     public static void activate() {
 
         System.out.println("ConsoleGUI begin");
 
-        System.out.println("Fruit - Provider activated"); // для проверки работы
+        System.out.println("Fruit - Provider activated!"); // для проверки работы
 
         // код ниже благодаря @Accessors(chain = true) мы можем заполнить (проинициализировать) List следующий образом:
         List<FruitEntity> fruitEntityList = new ArrayList<>(    // тут создаем обычный ArrayList
