@@ -31,6 +31,16 @@ public interface BookRepository extends JpaRepository<BookEntity, Integer>{
     List<BookEntity> between1819_SQL();
 
      // Какие книги были написаны с 1800 по 1900 JPQL
-     @Query("SELECT b FROM BookEntity b WHERE b.yearCreated BETWEEN 1800 AND 1900 ORDER BY b.yearCreated ASC")
+    @Query("SELECT b FROM BookEntity b WHERE b.yearCreated BETWEEN 1800 AND 1900 ORDER BY b.yearCreated ASC")
     List<BookEntity> between1819_JPQL();
+
+
+    // Join Book String
+    @Query("SELECT b.nameBook, a.firstNameAuthor, a.lastNameAuthor, b.yearCreated FROM AuthorEntity a LEFT JOIN BookEntity b ON a.id = b.authorId")
+    List<String> joinBookString();
+
+    // Join Book Object[]
+    @Query("SELECT b.nameBook, a.firstNameAuthor, a.lastNameAuthor, b.yearCreated FROM AuthorEntity a LEFT JOIN BookEntity b ON a.id = b.authorId")
+    List<Object[]> joinBookObj();
+
 }   

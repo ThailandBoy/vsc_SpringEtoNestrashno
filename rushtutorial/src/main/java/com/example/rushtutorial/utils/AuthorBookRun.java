@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.rushtutorial.entities.AuthorEntity;
 import com.example.rushtutorial.entities.BookEntity;
+import com.example.rushtutorial.entities.BookValueEntity;
 import com.example.rushtutorial.services.AuthorService;
 import com.example.rushtutorial.services.BookService;
 
@@ -94,15 +95,32 @@ public class AuthorBookRun {
         //     System.out.println(bookEntity);
         // }
 
-        System.out.println("Book count by Author: SQL");
-        for (String bookString : authorService.bookCountByAuthorSQL()) {
+        // System.out.println("Book count by Author: SQL");
+        // for (String bookString : authorService.bookCountByAuthorSQL()) {
+        //     System.out.println(bookString);
+        // }
+
+        // System.out.println("Book count by Author: JPQL");
+        // for (String bookString : authorService.bookCountByAuthorJPQL()) {
+        //     System.out.println(bookString);
+        // }
+
+        System.out.println("JOIN BOOK STRING");
+        for (String bookString : bookService.joinBookString()) {
             System.out.println(bookString);
         }
 
-        System.out.println("Book count by Author: JPQL");
-        for (String bookString : authorService.bookCountByAuthorJPQL()) {
+        System.out.println("JOIN BOOK Object[]");
+        for (Object[] bookString : bookService.joinBookObj()) {
             System.out.println(bookString);
         }
+
+        System.out.println("JOIN BOOK Object[] converted to readable view");
+        for (BookValueEntity bookString : bookService.bookValueEntities()) {
+            System.out.println(bookString);
+        }
+
+        
 
     }
 }
